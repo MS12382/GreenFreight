@@ -39,11 +39,11 @@
     }
 
     h1, h2, p {
-      border-radius: 100px;
+      border-radius: 20px;
       border: 4px solid #006400; 
       background-color: #C9D9D7; 
       padding: 14px 16px;
-      text-align: center;
+      text-align: left;
       color: #36460D;
     }
 
@@ -56,18 +56,33 @@
     }
 
     p {
-      font-size: 30px;
+      font-size: 20px;
     }
 
-    @media screen and (max-width: 600px) {
-      .topnav a:not(:first-child) {
-        display: none;
-      }
-      .topnav a.icon {
-        float: right;
-        display: block;
-      }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
     }
+
+    form input[type="text"] {
+      width: calc(100% - 16px);
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+
+    form input[type="button"] {
+      background-color: #006400;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form input[type="button"]:hover {
+      background-color: #004d00;
+    }
+
   </style>
 </head>
 <body>
@@ -86,20 +101,30 @@
   </a>
 </div>
 <h2><b>Sending Freight is Easy With GreenTrack.</b></h2> 
-<table>
-<tr>
-<td width="1500px">
-
-<p>please fill in the form below to tell us your contact details and additional information, then we will provide a quote.</p>
+<p>Please fill in the form below to tell us your contact details and additional information, then we will provide a quote.</p>
 
 <form id="bookingForm" action="https://script.google.com/macros/s/AKfycbwA_HE2w7Npz5jeEX5LmqwQtc5CkLH2AdFEs1QgeTTns5XR5X3r_kKpbdIX4UskSN4umQ/exec" method="POST">
-  <p> Your organisation/company/personal name: <input type="text" name="fname"><br><br>
-  <p> Contact number: <input type="text" name="pnumber"><br><br>
-  <p> Email: <input type="text" name="email"><br><br>
-  <p> Rail corridor you wish to transport your freight(Sydney to Melbourne, Melbourne to Sydney, London to Paris, Paris to London or cities in the East Coast Main Line): <input type="text" name="corridor"><br><br>
-  <p> Do you have your own shipping container(Give measurements, must be standard), or do you wish to hire a 20ft container one for $5/day or a 40ft container for $9/day?: <input type="text" name="container"><br><br>
-  <p> What will be in the container and give an estimated weight: <input type="text" name="item"><br><br>
-  <p> Any additional details you believe is necessary: <input type="text" name="detail"><br><br></p>
+  <label for="fname">Your organization/company/personal name:</label><br>
+  <input type="text" id="fname" name="fname"><br><br>
+  
+  <label for="pnumber">Contact number:</label><br>
+  <input type="text" id="pnumber" name="pnumber"><br><br>
+  
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><br><br>
+  
+  <label for="corridor">Rail corridor you wish to transport your freight:</label><br>
+  <input type="text" id="corridor" name="corridor"><br><br>
+  
+  <label for="container">Do you have your own shipping container?</label><br>
+  <input type="text" id="container" name="container"><br><br>
+  
+  <label for="item">What will be in the container and give an estimated weight:</label><br>
+  <input type="text" id="item" name="item"><br><br>
+  
+  <label for="detail">Any additional details you believe are necessary:</label><br>
+  <input type="text" id="detail" name="detail"><br><br>
+  
   <input type="button" onclick="myFunction()" value="Submit">
 </form>
 
@@ -112,3 +137,5 @@ function myFunction() {
 }
 </script>
 
+</body>
+</html>
